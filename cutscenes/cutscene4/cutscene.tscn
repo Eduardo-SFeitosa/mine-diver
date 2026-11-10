@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://byk4e53igiudk"]
+
+[ext_resource type="PackedScene" uid="uid://p3ptdfatf837" path="res://cutscenes/base_cutscene/base_cutscene.tscn" id="1_wtnft"]
+[ext_resource type="Script" uid="uid://b3x65ulxlf42o" path="res://menus/dialog_box/dialog_line.gd" id="2_s3nrq"]
+
+[sub_resource type="Resource" id="Resource_5nmjv"]
+script = ExtResource("2_s3nrq")
+name = "agent b"
+text = Array[String](["..........."])
+invert_text = false
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_s3nrq"]
+script = ExtResource("2_s3nrq")
+name = "contractor"
+text = Array[String](["Agent B", "I assume you already got to the bottom of the cave."])
+invert_text = true
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_ieokj"]
+script = ExtResource("2_s3nrq")
+name = "agent b"
+text = Array[String](["............", "BOOOM!"])
+invert_text = false
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_vo7w4"]
+script = ExtResource("2_s3nrq")
+name = "contractor"
+text = Array[String](["............", "I will take that as a yes", "thanks for your hard work agent B", "The money will be in your account as soon as you leave the cave"])
+invert_text = true
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_osox2"]
+script = ExtResource("2_s3nrq")
+name = "agent b"
+text = Array[String](["..........", "K"])
+invert_text = false
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Animation" id="Animation_s3nrq"]
+resource_name = "new_animation"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"create_dialog"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5nmjv"]
+_data = {
+&"new_animation": SubResource("Animation_s3nrq")
+}
+
+[node name="cutscene" instance=ExtResource("1_wtnft")]
+dialogs = Array[ExtResource("2_s3nrq")]([SubResource("Resource_5nmjv"), SubResource("Resource_s3nrq"), SubResource("Resource_ieokj"), SubResource("Resource_vo7w4"), SubResource("Resource_osox2")])
+
+[node name="dissolve_animation" parent="." index="2"]
+autoplay = ""
+
+[node name="dialog_boxes" parent="." index="3"]
+z_index = 1
+
+[node name="dialog_audio" parent="." index="5"]
+autoplay = false
+
+[node name="player" parent="." index="7"]
+z_index = 0
+
+[node name="ColorRect" type="ColorRect" parent="." index="8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10"]
+libraries = {
+&"": SubResource("AnimationLibrary_5nmjv")
+}
+autoplay = "new_animation"

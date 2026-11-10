@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://c6j0yq1lx26ui"]
+
+[ext_resource type="Script" uid="uid://cse0qxfgqc1qw" path="res://menus/options/options.gd" id="1_fnkyd"]
+[ext_resource type="Texture2D" uid="uid://svkx4tllf5jd" path="res://GUI/sprites/slider_front.png" id="5_fkr6b"]
+[ext_resource type="Texture2D" uid="uid://bdv5sovj02t60" path="res://GUI/sprites/slider_back.png" id="5_l1q53"]
+[ext_resource type="Texture2D" uid="uid://cikvwxa6ri3l2" path="res://GUI/sprites/button_normal.png" id="5_pfc30"]
+[ext_resource type="Texture2D" uid="uid://b527ejdjx72o6" path="res://GUI/sprites/dialog_background.png" id="6_unjrx"]
+[ext_resource type="Texture2D" uid="uid://cl2ogujo6hqd7" path="res://GUI/sprites/selection_off.png" id="7_1e5ff"]
+[ext_resource type="Texture2D" uid="uid://c4njbpyh3hra4" path="res://GUI/sprites/selection_on.png" id="8_fnkyd"]
+[ext_resource type="Texture2D" uid="uid://biw64dpkn4jgb" path="res://GUI/sprites/grabber.png" id="8_qqwda"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0p2hj"]
+content_margin_left = 35.0
+content_margin_top = 12.0
+texture = ExtResource("5_l1q53")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1q53"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("5_fkr6b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1e5ff"]
+texture = ExtResource("5_fkr6b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5djls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwr1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqwda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tq1i6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unjrx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfc30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2r7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifaq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vj2d5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnkyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1e5ff"]
+
+[node name="options_in_game" type="Control" unique_id=1716039963]
+process_mode = 3
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fnkyd")
+
+[node name="options_control" type="NinePatchRect" parent="." unique_id=1494629669]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.15
+anchor_right = 0.8
+anchor_bottom = 0.9
+texture = ExtResource("6_unjrx")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="control_container" type="VBoxContainer" parent="options_control" unique_id=802988622]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.067
+anchor_right = 0.944
+anchor_bottom = 0.933
+offset_left = -0.0640001
+offset_top = -0.04
+offset_right = 0.0639954
+offset_bottom = 0.0399933
+theme_override_constants/separation = 7
+
+[node name="music_control" type="HBoxContainer" parent="options_control/control_container" unique_id=327906228]
+layout_mode = 2
+
+[node name="TextureRect" type="Label" parent="options_control/control_container/music_control" unique_id=240222148]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "music"
+
+[node name="music_slider" type="HSlider" parent="options_control/control_container/music_control" unique_id=1232883346]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("8_qqwda")
+theme_override_icons/grabber_highlight = ExtResource("8_qqwda")
+theme_override_icons/grabber_disabled = ExtResource("8_qqwda")
+theme_override_icons/tick = ExtResource("8_qqwda")
+theme_override_styles/slider = SubResource("StyleBoxTexture_0p2hj")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_l1q53")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_1e5ff")
+max_value = 1.0
+step = 0.001
+value = 0.75
+
+[node name="sfx_control" type="HBoxContainer" parent="options_control/control_container" unique_id=694476844]
+layout_mode = 2
+
+[node name="TextureRect2" type="Label" parent="options_control/control_container/sfx_control" unique_id=625338558]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "sfx    "
+
+[node name="sfx_slider" type="HSlider" parent="options_control/control_container/sfx_control" unique_id=1735306603]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("8_qqwda")
+theme_override_icons/grabber_highlight = ExtResource("8_qqwda")
+theme_override_icons/grabber_disabled = ExtResource("8_qqwda")
+theme_override_icons/tick = ExtResource("8_qqwda")
+theme_override_styles/slider = SubResource("StyleBoxTexture_0p2hj")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_l1q53")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_1e5ff")
+max_value = 1.0
+step = 0.001
+value = 0.75
+
+[node name="screen_size" type="HBoxContainer" parent="options_control/control_container" unique_id=829977917]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="options_control/control_container/screen_size" unique_id=918198446]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 13
+text = "screen size"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="options_control/control_container/screen_size" unique_id=881617462]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="windowed" type="CheckButton" parent="options_control/control_container/screen_size/VBoxContainer" unique_id=1506873385]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5djls")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_nwr1p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qqwda")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tq1i6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_unjrx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pfc30")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_d2r7v")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ifaq7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vj2d5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fnkyd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1e5ff")
+theme_override_icons/checked = ExtResource("8_fnkyd")
+theme_override_icons/unchecked = ExtResource("7_1e5ff")
+button_pressed = true
+action_mode = 0
+button_mask = 0
+text = "window"
+alignment = 1
+
+[node name="full_screen" type="CheckButton" parent="options_control/control_container/screen_size/VBoxContainer" unique_id=846804476]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5djls")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_nwr1p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qqwda")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tq1i6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_unjrx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pfc30")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_d2r7v")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ifaq7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vj2d5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fnkyd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1e5ff")
+theme_override_icons/checked = ExtResource("8_fnkyd")
+theme_override_icons/unchecked = ExtResource("7_1e5ff")
+toggle_mode = false
+action_mode = 0
+button_mask = 3
+text = "full screen"
+alignment = 1
+
+[node name="exit" type="NinePatchRect" parent="." unique_id=114532236]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.7
+anchor_right = 0.6
+anchor_bottom = 0.788
+offset_bottom = -0.0800095
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("5_pfc30")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Label" type="Label" parent="exit" unique_id=1326566511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 9
+text = "return"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[connection signal="value_changed" from="options_control/control_container/music_control/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="options_control/control_container/sfx_control/sfx_slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="options_control/control_container/screen_size/VBoxContainer/windowed" to="." method="_on_windowed_pressed"]
+[connection signal="pressed" from="options_control/control_container/screen_size/VBoxContainer/full_screen" to="." method="_on_full_screen_pressed"]

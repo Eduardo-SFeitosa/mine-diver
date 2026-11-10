@@ -1,0 +1,222 @@
+[gd_scene load_steps=13 format=3 uid="uid://xuhqc7j42g6l"]
+
+[ext_resource type="PackedScene" uid="uid://p3ptdfatf837" path="res://cutscenes/base_cutscene/base_cutscene.tscn" id="1_xfpmt"]
+[ext_resource type="Script" uid="uid://mnwl4e43ee7l" path="res://cutscenes/cutscene2/cutscene.gd" id="2_3mjku"]
+[ext_resource type="AudioStream" uid="uid://b0mg6ad6mm0i3" path="res://cutscenes/cutscene2/slip.wav" id="2_jk145"]
+[ext_resource type="Texture2D" uid="uid://bj6dnab8nhmy2" path="res://cutscenes/sprites/broken_rail.png" id="3_3mjku"]
+[ext_resource type="Script" uid="uid://b3x65ulxlf42o" path="res://menus/dialog_box/dialog_line.gd" id="3_wjx6q"]
+
+[sub_resource type="Resource" id="Resource_psrxo"]
+script = ExtResource("3_wjx6q")
+name = "contractor"
+text = Array[String](["I see you are doing a good job agent B", "The way ahead is dangerous so keep your eyes open", "Anything to report?"])
+invert_text = true
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_wjx6q"]
+script = ExtResource("3_wjx6q")
+name = "contractor"
+text = Array[String](["..........", "Agent B?"])
+invert_text = true
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_detty"]
+script = ExtResource("3_wjx6q")
+name = "warning"
+text = Array[String](["Severe damage to internal systems", "Auto repair sequence initiated", "Manual explosion are temporarily desable to ensure safety", "External trigger system enabled", "Explosion activation now can be triggered by external factors"])
+invert_text = true
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Animation" id="Animation_3mjku"]
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("broken_rail:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(115, 148.785)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rail_paralax")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dissolve_effect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wf53f"]
+resource_name = "broken_bomb"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.1, 3.56667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"reset_dialogs"
+}, {
+"args": [],
+"method": &"create_dialog"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dissolve_effect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jk145"]
+resource_name = "broken_rail"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("broken_rail:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 152), Vector2(228, 152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.8, 3, 3.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(115, 148.785), Vector2(115, 145), Vector2(115, 170)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("slip")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rail_paralax")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("dialog_audio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.76667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.53333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"create_dialog"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjx6q"]
+_data = {
+&"RESET": SubResource("Animation_3mjku"),
+&"broken_bomb": SubResource("Animation_wf53f"),
+&"broken_rail": SubResource("Animation_jk145")
+}
+
+[node name="cutscene" instance=ExtResource("1_xfpmt")]
+script = ExtResource("2_3mjku")
+dialogs = Array[ExtResource("3_wjx6q")]([SubResource("Resource_psrxo"), null, SubResource("Resource_wjx6q"), null, SubResource("Resource_detty")])
+go_to_level = 11
+
+[node name="broken_rail" type="Sprite2D" parent="." index="6"]
+position = Vector2(360, 152)
+texture = ExtResource("3_3mjku")
+
+[node name="broken_rail_animation" type="AnimationPlayer" parent="." index="8"]
+libraries = {
+&"": SubResource("AnimationLibrary_wjx6q")
+}
+
+[node name="player" parent="." index="9"]
+position = Vector2(115, 148.785)
+
+[node name="slip" type="AudioStreamPlayer2D" parent="." index="11"]
+stream = ExtResource("2_jk145")
+bus = &"sfx"

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://h81kqgnvch0e"]
+
+[ext_resource type="PackedScene" uid="uid://p3ptdfatf837" path="res://cutscenes/base_cutscene/base_cutscene.tscn" id="1_d0sn8"]
+[ext_resource type="Script" uid="uid://b3x65ulxlf42o" path="res://menus/dialog_box/dialog_line.gd" id="2_ltnqt"]
+
+[sub_resource type="Resource" id="Resource_nmfe5"]
+script = ExtResource("2_ltnqt")
+name = "contractor"
+text = Array[String](["I'm glad to work with you agent B", "Your mission is simple", "Clear the path to the bottom of the mine ", "And deal with any inconvenient in the way", "Got it?"])
+invert_text = true
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_ltnqt"]
+script = ExtResource("2_ltnqt")
+name = "agent b"
+text = Array[String]([".......", "......."])
+invert_text = false
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[sub_resource type="Resource" id="Resource_fi4lo"]
+script = ExtResource("2_ltnqt")
+name = "contractor"
+text = Array[String](["........", "Good luck"])
+invert_text = true
+metadata/_custom_type_script = "uid://b3x65ulxlf42o"
+
+[node name="cutscene" instance=ExtResource("1_d0sn8")]
+dialogs = Array[ExtResource("2_ltnqt")]([SubResource("Resource_nmfe5"), SubResource("Resource_ltnqt"), SubResource("Resource_fi4lo")])
+go_to_level = 1

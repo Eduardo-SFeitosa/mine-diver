@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://8bx0bh1orji"]
+
+[ext_resource type="Texture2D" uid="uid://b527ejdjx72o6" path="res://GUI/sprites/dialog_background.png" id="1_4xrxa"]
+[ext_resource type="Script" uid="uid://dldmxisvh8m28" path="res://menus/skip_level/skip_level.gd" id="1_wmftw"]
+[ext_resource type="Texture2D" uid="uid://cikvwxa6ri3l2" path="res://GUI/sprites/button_normal.png" id="2_wmftw"]
+
+[node name="skip_level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmftw")
+metadata/_edit_lock_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.3
+anchor_right = 0.667
+anchor_bottom = 0.8
+offset_left = 0.0800018
+offset_right = -0.0800171
+texture = ExtResource("1_4xrxa")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.437
+offset_right = 8.0
+offset_bottom = 0.0400009
+theme_override_font_sizes/font_size = 8
+text = "Skip level?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="no" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.533
+anchor_top = 0.55
+anchor_right = 0.633
+anchor_bottom = 0.625
+offset_left = 0.0799866
+offset_top = -8.0
+offset_right = 0.0800171
+offset_bottom = -8.0
+mouse_filter = 0
+texture = ExtResource("2_wmftw")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="no"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.111
+anchor_right = 0.8
+anchor_bottom = 0.778
+offset_top = 0.00799942
+offset_bottom = -7.836
+theme_override_font_sizes/font_size = 8
+text = "no"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="yes" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.55
+anchor_right = 0.467
+anchor_bottom = 0.625
+offset_left = -0.0800018
+offset_top = -8.0
+offset_right = -0.0800018
+offset_bottom = -8.0
+mouse_filter = 0
+texture = ExtResource("2_wmftw")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="yes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.111
+anchor_right = 0.8
+anchor_bottom = 0.778
+offset_top = 0.00799942
+offset_bottom = -7.836
+theme_override_font_sizes/font_size = 8
+text = "yes"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.6
+anchor_right = 0.633
+anchor_bottom = 0.731
+offset_left = -0.0800018
+offset_right = 0.0800018
+offset_bottom = 0.0400009
+theme_override_font_sizes/font_size = 5
+text = "you can come back to this level  later "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

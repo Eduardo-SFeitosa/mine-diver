@@ -1,0 +1,173 @@
+[gd_scene load_steps=7 format=4 uid="uid://d1kqvktdyadc5"]
+
+[ext_resource type="PackedScene" uid="uid://b1r5gg6ag3ntw" path="res://levels/base_level/base_level.tscn" id="1_lvnuj"]
+[ext_resource type="Texture2D" uid="uid://h4r1tfgfuyf5" path="res://GUI/sprites/countdown_under.png" id="2_rxptd"]
+[ext_resource type="Texture2D" uid="uid://hlbig00d6076" path="res://GUI/sprites/countdown_background.png" id="3_whm6q"]
+[ext_resource type="Texture2D" uid="uid://baodfhn35jfl8" path="res://GUI/sprites/countdown_progress.png" id="4_ghnwh"]
+[ext_resource type="FontFile" uid="uid://crd1lh2ip77m5" path="res://menus/fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" id="5_weeyq"]
+[ext_resource type="PackedScene" uid="uid://bfpgaokx45p7t" path="res://objects/activable/base_door_cave.tscn" id="7_ghnwh"]
+
+[node name="base_level" instance=ExtResource("1_lvnuj")]
+level_number = 12
+max_countdown = 4
+hint_dialog = Array[String](["The campfire and lantern give you a limited explosion spot", "Try to destroy fragile stones that will get in your way"])
+bomb_activation = 0
+
+[node name="floor_cealing" parent="tilemaps" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAABAAAAA0AAAAAAAEABAAAAA0AAAAAAAMABAAAAA0AAAAAAAQABAAAAA0AAAAAAAUABAAAAA0AAAAAAAYABAAAAA0AAAAAAAcABAAAAA0AAAAAAAgABAAAAA0AAAAAAAkABAAAAA0AAAABAAkABAAAAAwAAAACAAkABAAGAA0AAAADAAkABAAGAA0AAAAEAAkABAAHAA0AAAAFAAkABAAFAA0AAAAGAAkABAAGAA0AAAAHAAkABAAGAA0AAAAIAAkABAAHAA0AAAAJAAkABAAHAA0AAAAKAAkABAAHAA0AAAALAAkABAAGAA0AAAAMAAkABAAHAA0AAAANAAkABAAAAAwAAGAOAAkABAAAAA0AAAAOAAAABAAAAA0AAAANAAAABAAAAA0AAAAMAAAABAAAAA0AAAALAAAABAAAAA0AAAAKAAAABAAAAA0AAAAJAAAABAAAAA0AAAAIAAAABAAAAA0AAAAHAAAABAAAAA0AAAAGAAAABAAAAA0AAAAFAAAABAAAAA0AAAAEAAAABAAAAA0AAAADAAAABAAAAA0AAAACAAAABAAAAA0AAAABAAAABAAAAA0AAAAOAAEABAAAAA0AAAAOAAIABAAAAA0AAAAOAAMABAAAAA0AAAAOAAQABAAAAA0AAAAOAAUABAAAAA0AAAAOAAYABAAAAA0AAAAOAAcABAAAAA0AAAAOAAgABAAAAA0AAAABAAEABAAAAA0AAAABAAIABAAAAAwAAFABAAMABAAGAAwAAAABAAQABAAKAAwAAAABAAUABAAHAAwAAAABAAYABAAGAAwAAAABAAcABAAHAAwAAAABAAgABAAGAAwAAAACAAEABAAAAA0AAAACAAIABAAGAAoAAAACAAMAAwAIAAwAAAACAAQAAwAIAAEAAAACAAUAAwAIAAUAAAACAAYAAwAIAAUAAAACAAcAAwAIAAUAAAACAAgAAwAIAAcAAAADAAEABAAAAA0AAAADAAIABAAGAAoAAAADAAMAAwAKAAQAAAADAAQAAwAMAAwAAAADAAUAAwAJAAIAAAADAAYAAwAMAAwAAAADAAcAAwAMAAUAAAADAAgAAwAJAA8AAAAEAAEABAAAAA0AAAAEAAIABAAFAAoAAAAEAAMAAwAKAAQAAAAEAAQAAwAJAAYAAAAEAAUAAwAJAAIAAAAEAAYAAwAJAAIAAAAEAAcAAwAJAAYAAAAEAAgAAwAJAAcAAAAFAAEABAAAAA0AAAAFAAIABAAGAAoAAAAFAAMAAwAKAAQAAAAFAAQAAwAMAAwAAAAFAAUAAwAMAAwAAAAFAAYAAwAMAAwAAAAFAAcAAwAJAAIAAAAFAAgAAwAJAAMAAAAGAAEABAAAAA0AAAAGAAIABAAGAAoAAAAGAAMAAwAKAAQAAAAGAAQAAwAMAAwAAAAGAAUAAwAJAAIAAAAGAAcAAwAMAAUAAAAGAAgAAwAJAAcAAAAHAAEABAAAAA0AAAAHAAIABAAGAAoAAAAHAAMAAwAKAAAAAAAHAAQAAwAMAAUAAAAHAAUAAwAJAAIAAAAHAAYAAwAJAAYAAAAHAAcAAwAMAAwAAAAHAAgAAwAJAAMAAAAIAAEABAAAAA0AAAAIAAIABAAGAAoAAAAIAAMAAwAKAAAAAAAIAAQAAwAMAAwAAAAIAAUAAwAJAAYAAAAIAAYAAwAJAAIAAAAIAAcAAwAJAAYAAAAIAAgAAwAJAAcAAAAJAAEABAAAAA0AAAAJAAIABAAFAAoAAAAJAAMAAwAKAAwAAAAJAAQAAwAJAAIAAAAJAAUAAwAMAAwAAAAJAAYAAwAJAAYAAAAJAAcAAwAMAAUAAAAJAAgAAwAJAA8AAAAKAAEABAAAAA0AAAAKAAIABAAHAAoAAAAKAAMAAwAKAAQAAAAKAAQAAwAJAAIAAAAKAAUAAwAMAAwAAAAKAAYAAwAJAAYAAAAKAAcAAwAMAAUAAAAKAAgAAwAJAAcAAAALAAEABAAAAA0AAAALAAIABAAHAAoAAAALAAMAAwAKAAAAAAALAAQAAwAJAAYAAAALAAUAAwAJAAIAAAALAAYAAwAMAAwAAAALAAcAAwAMAAwAAAALAAgAAwAJAAMAAAAMAAEABAAAAA0AAAAMAAIABAAHAAoAAAAMAAMAAwALAAQAAAAMAAQAAwALAAYAAAAMAAUAAwALAA4AAAAMAAYAAwALAA4AAAAMAAcAAwALAAYAAAAMAAgAAwALAA8AAAANAAEABAAAAA0AAAANAAIABAAAAAwAADANAAMABAAGAAsAAAANAAQABAAHAAsAAAANAAUABAAFAAsAAAANAAYABAAGAAsAAAANAAcABAAGAAsAAAANAAgABAAHAAsAAAAGAAYAAwAMAAUAAAAAAAIABAAAAA0AAAA=")
+
+[node name="countdown2" type="Control" parent="GUI" index="2"]
+layout_mode = 1
+anchor_left = 0.203
+anchor_top = 0.054
+anchor_right = 0.315
+anchor_bottom = 0.229
+offset_left = -0.0521393
+offset_top = -0.0419703
+offset_right = 0.0678558
+offset_bottom = -0.0419884
+
+[node name="clock" type="TextureProgressBar" parent="GUI/countdown2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("2_rxptd")
+texture_over = ExtResource("3_whm6q")
+texture_progress = ExtResource("4_ghnwh")
+metadata/_edit_lock_ = true
+
+[node name="counter" type="Label" parent="GUI/countdown2" index="1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_weeyq")
+theme_override_font_sizes/font_size = 20
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="GUI" index="3"]
+layout_mode = 1
+anchor_left = 0.172
+anchor_top = 0.116
+anchor_right = 0.467
+anchor_bottom = 0.216
+offset_left = -14.6312
+offset_top = -1.10032
+offset_right = -13.4312
+offset_bottom = -1.10032
+metadata/_edit_lock_ = true
+
+[node name="hbox" type="HBoxContainer" parent="GUI/Control" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.1
+anchor_right = 0.667
+anchor_bottom = 0.25
+offset_left = -18.424
+offset_top = -1.6
+offset_right = 37.576
+offset_bottom = 12.0
+theme_override_constants/separation = 24
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="GUI/Control/hbox" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "="
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="countdown3" type="Control" parent="GUI" index="4"]
+layout_mode = 1
+anchor_left = 0.786
+anchor_top = 0.063
+anchor_right = 0.898
+anchor_bottom = 0.238
+offset_left = -0.0327606
+offset_top = -0.0173702
+offset_right = 0.0872192
+offset_bottom = -0.0173874
+
+[node name="clock" type="TextureProgressBar" parent="GUI/countdown3" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("2_rxptd")
+texture_over = ExtResource("3_whm6q")
+texture_progress = ExtResource("4_ghnwh")
+metadata/_edit_lock_ = true
+
+[node name="counter" type="Label" parent="GUI/countdown3" index="1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_weeyq")
+theme_override_font_sizes/font_size = 20
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Control2" type="Control" parent="GUI" index="5"]
+layout_mode = 1
+anchor_left = 0.7
+anchor_top = 0.121
+anchor_right = 1.0
+anchor_bottom = 0.221
+offset_left = -1.52588e-05
+offset_top = -0.0250702
+offset_right = -1.52588e-05
+offset_bottom = -0.0250702
+
+[node name="hbox" type="HBoxContainer" parent="GUI/Control2" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.1
+anchor_right = 0.667
+anchor_bottom = 0.25
+offset_left = -18.424
+offset_top = -1.6
+offset_right = 37.576
+offset_bottom = 12.0
+theme_override_constants/separation = 24
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="GUI/Control2/hbox" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "="
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." index="2"]
+position = Vector2(72, 88)
+
+[node name="objects" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAKAAgAAAAAAAAAAgAKAAEAAAAAAAAACgAJAAcAAAAAAAAAAwAFAAcAAAAAAAAAAwAIAAcAAAAAAAAAAwAHAAQAAAAAAAAAAwADAAcAAAAAAAAAAQALAAQAAAAAAAAAAQAIAAgAAAAAAAAAAgAJAAgAAAAAAAAACQADAAYAAAAAAAAACgAEAAMAAAAAAAAACQACAAQAAAAAAAAACAAGAAUAAAAAAAAAAgAGAAYAAAAAAAAAAgAGAAMAAAAAAAAAAgABAAEAAAAAAAAACQA=")
+
+[node name="base_door2" parent="." index="6" instance=ExtResource("7_ghnwh")]
+position = Vector2(24, 72)
+activated = 1
+door_direction = 1

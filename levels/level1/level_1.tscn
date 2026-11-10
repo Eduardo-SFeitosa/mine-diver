@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=4 uid="uid://p0rhw7ikhcmk"]
+
+[ext_resource type="PackedScene" uid="uid://b1r5gg6ag3ntw" path="res://levels/base_level/base_level.tscn" id="1_ma7p6"]
+[ext_resource type="Texture2D" uid="uid://cr4ith5to5l44" path="res://GUI/sprites/keyboard.png" id="3_pdqx2"]
+[ext_resource type="Texture2D" uid="uid://c5v6m3540jcme" path="res://GUI/sprites/arrow.png" id="4_accki"]
+[ext_resource type="Texture2D" uid="uid://blguw4a1t0wmt" path="res://GUI/sprites/spacebar.png" id="5_et120"]
+[ext_resource type="Texture2D" uid="uid://3ss7eupctjx5" path="res://GUI/sprites/r.png" id="6_accki"]
+[ext_resource type="Texture2D" uid="uid://dqgb6g0gaw5vt" path="res://GUI/sprites/hint.png" id="7_iqhro"]
+
+[node name="base_level" instance=ExtResource("1_ma7p6")]
+hint_dialog = Array[String](["Seems like this spiky rock is not connected to the ground"])
+bomb_activation = 0
+
+[node name="floor_cealing" parent="tilemaps" index="0"]
+tile_map_data = PackedByteArray("AAAKAAYAAAALAA8AAAAKAAQAAAALAAwAAAAFAAYAAAAIAAMAAAAFAAQAAAAIAAQAAAAGAAQAAAAKAAwAAAAGAAUAAAAJAAIAAAAGAAYAAAAJAAMAAAAHAAQAAAAKAAAAAAAHAAUAAAAJAAIAAAAHAAYAAAAJAAcAAAAIAAUAAAAMAAwAAAAJAAUAAAAMAAwAAAAIAAQAAAAKAAAAAAAJAAQAAAAKAAQAAAAIAAYAAAAJAA8AAAAJAAYAAAAJAA8AAAAKAAUAAAALAAYAAAAFAAUAAAAIAA0AAAAAAAAAAgAAAAgAAAAAAAEAAgAAAAgAAAAAAAIAAgAAAAgAAAAAAAMAAgAAAAgAAAAAAAQAAgAAAAgAAAAAAAUAAgAAAAgAAAAAAAYAAgAAAAgAAAAAAAcAAgAAAAgAAAAAAAgAAgAAAAgAAAAAAAkAAgAAAAgAAAABAAAAAgAAAAgAAAABAAEAAgAAAAgAAAABAAIAAgAAAAgAAAABAAMAAgAAAAgAAAABAAQAAgAAAAgAAAABAAUAAgAAAAgAAAABAAYAAgAAAAgAAAABAAcAAgAAAAgAAAABAAgAAgAAAAgAAAABAAkAAgAAAAgAAAACAAAAAgAAAAgAAAACAAEAAgAAAAgAAAACAAIAAgAAAAgAAAACAAMAAgAAAAgAAAACAAQAAgAAAAgAAAACAAUAAgAAAAgAAAACAAYAAgAAAAgAAAACAAcAAgAAAAgAAAACAAgAAgAAAAgAAAACAAkAAgAAAAgAAAADAAAAAgAAAAgAAAADAAEAAgAAAAgAAAADAAIAAgAAAAgAAAADAAMAAgAAAAgAAAADAAQAAgAAAAgAAAADAAUAAgAAAAgAAAADAAYAAgAAAAgAAAADAAcAAgAAAAgAAAADAAgAAgAAAAgAAAADAAkAAgAAAAgAAAAEAAcAAgADAAgAAFAEAAgAAgAAAAgAAAAEAAkAAgAAAAgAAAAFAAcAAgAIAAgAAAAFAAgAAgAAAAgAAAAFAAkAAgAAAAgAAAAGAAcAAgAHAAgAAAAGAAgAAgAAAAgAAAAGAAkAAgAAAAgAAAAHAAcAAgAIAAgAAAAHAAgAAgAAAAgAAAAHAAkAAgAAAAgAAAAIAAcAAgAIAAgAAAAIAAgAAgAAAAgAAAAIAAkAAgAAAAgAAAAJAAcAAgAIAAgAAAAJAAgAAgAAAAgAAAAJAAkAAgAAAAgAAAAKAAcAAgAHAAgAAAAKAAgAAgAAAAgAAAAKAAkAAgAAAAgAAAALAAcAAgADAAgAAAALAAgAAgAAAAgAAAALAAkAAgAAAAgAAAAMAAcAAgAAAAgAAAAMAAgAAgAAAAgAAAAMAAkAAgAAAAgAAAANAAcAAgAAAAgAAAANAAgAAgAAAAgAAAANAAkAAgAAAAgAAAAOAAcAAgAAAAgAAAAOAAgAAgAAAAgAAAAOAAkAAgAAAAgAAAAMAAAAAgAAAAgAAAAMAAEAAgAAAAgAAAAMAAIAAgAAAAgAAAAMAAMAAgAAAAgAAAAMAAQAAgAAAAgAAAAMAAUAAgAAAAgAAAAMAAYAAgAAAAgAAAANAAAAAgAAAAgAAAANAAEAAgAAAAgAAAANAAIAAgAAAAgAAAANAAMAAgAAAAgAAAANAAQAAgAAAAgAAAANAAUAAgAAAAgAAAANAAYAAgAAAAgAAAAOAAAAAgAAAAgAAAAOAAEAAgAAAAgAAAAOAAIAAgAAAAgAAAAOAAMAAgAAAAgAAAAOAAQAAgAAAAgAAAAOAAUAAgAAAAgAAAAOAAYAAgAAAAgAAAAEAAAAAgAAAAgAAAAEAAEAAgAAAAgAAAAEAAIAAgAAAAgAAAAFAAAAAgAAAAgAAAAFAAEAAgAAAAgAAAAFAAIAAgAAAAgAAAAGAAAAAgAAAAgAAAAGAAEAAgAAAAgAAAAGAAIAAgAAAAgAAAAHAAAAAgAAAAgAAAAHAAEAAgAAAAgAAAAHAAIAAgAAAAgAAAAIAAAAAgAAAAgAAAAIAAEAAgAAAAgAAAAIAAIAAgAAAAgAAAAJAAAAAgAAAAgAAAAJAAEAAgAAAAgAAAAJAAIAAgAAAAgAAAAKAAAAAgAAAAgAAAAKAAEAAgAAAAgAAAAKAAIAAgAAAAgAAAALAAAAAgAAAAgAAAALAAEAAgAAAAgAAAALAAIAAgAAAAgAAAAIAAMAAgAKAAUAAAAKAAMAAgAMAAUAAAAFAAMAAgAIAAUAAAAGAAMAAgAIAAUAAAAHAAMAAgAHAAUAAAAEAAQAAgAIAAcAAAAEAAUAAgAHAAcAAAALAAQAAgAHAAYAAAALAAUAAgAIAAYAAAALAAYAAgAIAAYAAAALAAMAAgADAAgAAGAEAAYAAgAIAAcAAAAEAAMAAgADAAgAADAJAAMAAgALAAUAAAA=")
+
+[node name="TextureRect" type="TextureRect" parent="GUI" index="2"]
+layout_mode = 2
+anchor_left = 0.1
+anchor_top = 0.55
+anchor_right = 0.228
+anchor_bottom = 0.6
+offset_right = 0.279995
+size_flags_vertical = 3
+texture = ExtResource("5_et120")
+expand_mode = 5
+
+[node name="Control" type="VBoxContainer" parent="GUI" index="3"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.3
+anchor_right = 0.267
+anchor_bottom = 0.55
+offset_left = -0.0799999
+offset_right = -0.0799942
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="GUI/Control" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "move"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Control" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_pdqx2")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_accki")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="GUI/Control" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "explode"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="restart" type="VBoxContainer" parent="GUI" index="4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.967
+anchor_bottom = 0.75
+offset_right = -0.0800171
+alignment = 1
+
+[node name="Label" type="Label" parent="GUI/restart" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "restart"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="GUI/restart" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_accki")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="hint" type="VBoxContainer" parent="GUI" index="5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.2
+anchor_right = 0.967
+anchor_bottom = 0.45
+offset_right = -0.0800171
+alignment = 1
+
+[node name="Label" type="Label" parent="GUI/hint" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "hint"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="GUI/hint" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_iqhro")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." index="2"]
+position = Vector2(104, 88)
+
+[node name="objects" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAHAAYAAAAAAAAAAQAHAAQAAAAAAAAAAgAHAAUAAAAAAAAAAgAJAAMAAAAAAAAABAAKAAYAAAAAAAAABQA=")
+
+[connection signal="body_entered" from="objects/press_button" to="objects/press_button" method="_on_body_entered"]
+[connection signal="body_exited" from="objects/press_button" to="objects/press_button" method="_on_body_exited"]

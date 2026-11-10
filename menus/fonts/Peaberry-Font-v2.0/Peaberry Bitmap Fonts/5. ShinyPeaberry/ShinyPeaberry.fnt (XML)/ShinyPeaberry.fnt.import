@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bwgm3h37bj4mx"
+path="res://.godot/imported/ShinyPeaberry.fnt-fff1a3d4cf9fb52a9a95848df7ba97aa.fontdata"
+
+[deps]
+
+source_file="res://menus/fonts/Peaberry-Font-v2.0/Peaberry Bitmap Fonts/5. ShinyPeaberry/ShinyPeaberry.fnt (XML)/ShinyPeaberry.fnt"
+dest_files=["res://.godot/imported/ShinyPeaberry.fnt-fff1a3d4cf9fb52a9a95848df7ba97aa.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

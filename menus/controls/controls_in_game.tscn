@@ -1,0 +1,185 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0f4nn4qcewfx"]
+
+[ext_resource type="Script" uid="uid://dx58uvexxfvwe" path="res://menus/controls/controls_in_game.gd" id="1_e6o0b"]
+[ext_resource type="Texture2D" uid="uid://lh5b5rv73crk" path="res://GUI/sprites/background_panel.png" id="2_srbay"]
+[ext_resource type="Texture2D" uid="uid://cr4ith5to5l44" path="res://GUI/sprites/keyboard.png" id="3_4uuhw"]
+[ext_resource type="Texture2D" uid="uid://c5v6m3540jcme" path="res://GUI/sprites/arrow.png" id="4_evw4s"]
+[ext_resource type="Texture2D" uid="uid://3ss7eupctjx5" path="res://GUI/sprites/r.png" id="5_iv0aa"]
+[ext_resource type="Texture2D" uid="uid://blguw4a1t0wmt" path="res://GUI/sprites/spacebar.png" id="6_80bgh"]
+[ext_resource type="Texture2D" uid="uid://dqgb6g0gaw5vt" path="res://GUI/sprites/hint.png" id="6_srbay"]
+[ext_resource type="Texture2D" uid="uid://cikvwxa6ri3l2" path="res://GUI/sprites/button_normal.png" id="7_43yg5"]
+
+[node name="controls_off_game" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6o0b")
+metadata/_edit_lock_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.85
+offset_top = -16.0
+offset_bottom = 8.0
+texture = ExtResource("2_srbay")
+
+[node name="Control" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.15
+anchor_right = 0.6
+anchor_bottom = 0.35
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "move"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_4uuhw")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_evw4s")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="restart" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.4
+anchor_right = 0.495
+anchor_bottom = 0.55
+offset_left = -0.0800018
+offset_right = 13.2
+offset_bottom = 10.0
+scale = Vector2(0.7, 0.7)
+alignment = 1
+
+[node name="Label" type="Label" parent="restart"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "restart"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="restart"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_iv0aa")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="hint" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.4
+anchor_right = 0.633
+anchor_bottom = 0.55
+offset_left = 0.0799942
+offset_right = 14.08
+offset_bottom = 10.0
+scale = Vector2(0.7, 0.7)
+alignment = 1
+
+[node name="Label" type="Label" parent="hint"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "hint"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="hint"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_srbay")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.413
+anchor_top = 0.6
+anchor_right = 0.58
+anchor_bottom = 0.725
+offset_left = 0.0259628
+offset_right = -0.0540466
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "explode"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_80bgh")
+expand_mode = 2
+
+[node name="exit" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.413
+anchor_top = 0.75
+anchor_right = 0.58
+anchor_bottom = 0.837
+offset_left = 0.0259705
+offset_right = -0.0540619
+offset_bottom = 0.0800018
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("7_43yg5")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Label" type="Label" parent="exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 9
+text = "return"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="button_pressed" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"

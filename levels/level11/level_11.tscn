@@ -1,0 +1,160 @@
+[gd_scene load_steps=14 format=4 uid="uid://b3o672avr08wk"]
+
+[ext_resource type="PackedScene" uid="uid://b1r5gg6ag3ntw" path="res://levels/base_level/base_level.tscn" id="1_uj7n2"]
+[ext_resource type="Texture2D" uid="uid://cine6ubiha8xm" path="res://player/player_explosion/sprites/explosion.png" id="2_1ui1v"]
+[ext_resource type="Texture2D" uid="uid://h4r1tfgfuyf5" path="res://GUI/sprites/countdown_under.png" id="2_8h42m"]
+[ext_resource type="Texture2D" uid="uid://hlbig00d6076" path="res://GUI/sprites/countdown_background.png" id="3_1ui1v"]
+[ext_resource type="PackedScene" uid="uid://bfpgaokx45p7t" path="res://objects/activable/base_door_cave.tscn" id="3_uef3m"]
+[ext_resource type="Texture2D" uid="uid://baodfhn35jfl8" path="res://GUI/sprites/countdown_progress.png" id="4_0sfvl"]
+[ext_resource type="FontFile" uid="uid://crd1lh2ip77m5" path="res://menus/fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" id="5_uef3m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0ym7"]
+atlas = ExtResource("2_1ui1v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbche"]
+atlas = ExtResource("2_1ui1v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ap1b"]
+atlas = ExtResource("2_1ui1v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hfia"]
+atlas = ExtResource("2_1ui1v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4eut"]
+atlas = ExtResource("2_1ui1v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sfvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0ym7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbche")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ap1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hfia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4eut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="base_level" instance=ExtResource("1_uj7n2")]
+level_number = 11
+hint_dialog = Array[String](["Those lamps are making you trigger explosions by movement", "Try to explode far from those coal carts"])
+bomb_activation = 0
+
+[node name="base_door2" parent="." index="0" instance=ExtResource("3_uef3m")]
+position = Vector2(200, 88)
+activated = 1
+
+[node name="tilemaps" parent="." index="1"]
+tile_map_data = PackedByteArray("AAABAAEAAQAAAAgAAAABAAIAAQAAAAgAAAABAAMAAQAAAAgAAAABAAQAAQAAAAgAAAABAAUAAQAAAAgAAAABAAYAAQAAAAgAAAABAAcAAQAAAAgAAAABAAgAAQAAAAgAAAACAAEAAQAAAAgAAAACAAIAAQAAAAgAAAACAAMAAQAAAAgAAAACAAQAAQAAAAgAAAACAAUAAQAAAAgAAAACAAYAAQAAAAgAAAACAAcAAQAAAAgAAAACAAgAAQAAAAgAAAADAAEAAQAAAAgAAAADAAIAAQAAAAgAAAADAAMAAQAAAAgAAAADAAQAAQAAAAgAAAADAAUAAQAAAAgAAAADAAYAAQAAAAgAAAADAAcAAQAAAAgAAAADAAgAAQAAAAgAAAAEAAEAAQAAAAgAAAAEAAIAAQAAAAgAAAAEAAMAAQAAAAgAAAAEAAcAAQAAAAgAAAAEAAgAAQAAAAgAAAAFAAEAAQAAAAgAAAAFAAIAAQAAAAgAAAAFAAMAAQAAAAgAAAAGAAEAAQAAAAgAAAAGAAIAAQAAAAgAAAAGAAMAAQAAAAgAAAAHAAEAAQAAAAgAAAAHAAIAAQAAAAgAAAAHAAMAAQAAAAgAAAAIAAEAAQAAAAgAAAAIAAIAAQAAAAgAAAAIAAMAAQAAAAgAAAAJAAEAAQAAAAgAAAAJAAIAAQAAAAgAAAAJAAMAAQAAAAgAAAAKAAEAAQAAAAgAAAAKAAIAAQAAAAgAAAAKAAMAAQAAAAgAAAALAAEAAQAAAAgAAAALAAIAAQAAAAgAAAALAAMAAQAAAAgAAAAMAAEAAQAAAAgAAAAMAAIAAQAAAAgAAAAMAAMAAQAAAAgAAAANAAEAAQAAAAgAAAANAAIAAQAAAAgAAAANAAMAAQAAAAgAAAAMAAQAAQAAAAgAAAAMAAUAAQAAAAgAAAAMAAYAAQAAAAgAAAAMAAcAAQAAAAgAAAAMAAgAAQAAAAgAAAAMAAkAAQAAAAgAAAANAAQAAQAAAAgAAAANAAUAAQAAAAgAAAANAAYAAQAAAAgAAAANAAcAAQAAAAgAAAANAAgAAQAAAAgAAAANAAkAAQAAAAgAAAAOAAIAAQAAAAgAAAAOAAMAAQAAAAgAAAAOAAQAAQAAAAgAAAAOAAUAAQAAAAgAAAAOAAYAAQAAAAgAAAAOAAcAAQAAAAgAAAAOAAgAAQAAAAgAAAAOAAkAAQAAAAgAAAAFAAcAAQAAAAgAAAAFAAgAAQAAAAgAAAAGAAcAAQAAAAgAAAAGAAgAAQAAAAgAAAAHAAcAAQAAAAgAAAAHAAgAAQAAAAgAAAAIAAcAAQAAAAgAAAAIAAgAAQAAAAgAAAAJAAcAAQAAAAgAAAAJAAgAAQAAAAgAAAAKAAcAAQAAAAgAAAAKAAgAAQAAAAgAAAALAAcAAQAAAAgAAAALAAgAAQAAAAgAAAAEAAQAAQAAAAgAAAAEAAUAAQAAAAgAAAAEAAYAAQAAAAgAAAAFAAQAAQAAAAgAAAAFAAUAAQAAAAgAAAAFAAYAAQAAAAgAAAA=")
+
+[node name="floor_cealing" parent="tilemaps" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAgAAAAAAAEAAgAAAAgAAAAAAAIAAgAAAAgAAAAAAAMAAgAAAAgAAAAAAAQAAgAAAAgAAAAAAAUAAgAAAAgAAAAAAAYAAgAAAAgAAAAAAAcAAgAAAAgAAAAAAAgAAgAAAAgAAAAAAAkAAgAAAAgAAAABAAkAAgAAAAgAAAACAAkAAgAAAAgAAAADAAkAAgAAAAgAAAAEAAkAAgAAAAgAAAAFAAkAAgAAAAgAAAAGAAkAAgAAAAgAAAAHAAkAAgAAAAgAAAAIAAkAAgAAAAgAAAAJAAkAAgAAAAgAAAAKAAkAAgAAAAgAAAALAAkAAgAAAAgAAAAMAAkAAgAAAAgAAAANAAkAAgAAAAgAAAAOAAkAAgAAAAgAAAAOAAAAAgAAAAgAAAAOAAEAAgAAAAgAAAAOAAIAAgAAAAgAAAAOAAMAAgAAAAgAAAAOAAQAAgAAAAgAAAAOAAUAAgAAAAgAAAAOAAYAAgAAAAgAAAAOAAcAAgAAAAgAAAAOAAgAAgAAAAgAAAABAAAAAgAAAAgAAAACAAAAAgAAAAgAAAADAAAAAgAAAAgAAAAEAAAAAgAAAAgAAAAFAAAAAgAAAAgAAAAGAAAAAgAAAAgAAAAHAAAAAgAAAAgAAAAIAAAAAgAAAAgAAAAJAAAAAgAAAAgAAAAKAAAAAgAAAAgAAAALAAAAAgAAAAgAAAAMAAAAAgAAAAgAAAANAAAAAgAAAAgAAAALAAUAAwALAAIAAAALAAYAAwALAA8AAAALAAcABAAFAA0AAAALAAQAAwALAAQAAAAFAAcABAADAA0AAFAFAAMABAADAA0AADALAAMABAAGAAoAAAAGAAMABAAHAAoAAAAHAAMABAAFAAoAAAAIAAMABAAHAAoAAAAJAAMABAAFAAoAAAAKAAMABAAHAAoAAAAFAAQABAAGAAwAAAAFAAUABAAGAAwAAAAFAAYABAAGAAwAAAAGAAcABAAFAA0AAAAIAAcABAAGAA0AAAAJAAcABAAGAA0AAAAKAAcABAAHAA0AAAAHAAYAAwAJAAcAAAAIAAYAAwAJAAcAAAAJAAYAAwAJAAMAAAAGAAYAAwAIAA8AAAAKAAQAAwAKAAQAAAAGAAQAAwAIAAwAAAAHAAQAAwAKAAAAAAAIAAQAAwAKAAwAAAAJAAQAAwAKAAwAAAAGAAUAAwAIAAUAAAAHAAUAAwAMAAUAAAAIAAUAAwAJAAIAAAAJAAUAAwAMAAUAAAAKAAUAAwAMAAwAAAAKAAYAAwAJAA8AAAAHAAcABAAHAA0AAAAMAAUABAANAAsAAAAMAAcABAADAA0AAAAMAAMABAADAA0AAGAMAAYABAAHAAsAAAAMAAQABAAHAAsAAAA=")
+
+[node name="countdown" parent="GUI" index="1"]
+visible = true
+
+[node name="clock" parent="GUI/countdown" index="0"]
+max_value = 5.0
+
+[node name="Control" type="Control" parent="GUI" index="2"]
+layout_mode = 1
+anchor_left = 0.567
+anchor_top = 0.2
+anchor_right = 0.733
+anchor_bottom = 0.3
+offset_left = -0.0800018
+offset_right = 0.0799866
+
+[node name="TextureRect2" type="AnimatedSprite2D" parent="GUI/Control" index="0"]
+position = Vector2(16.327, 5.71089)
+sprite_frames = SubResource("SpriteFrames_0sfvl")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="hbox" type="HBoxContainer" parent="GUI/Control" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.1
+anchor_right = 0.667
+anchor_bottom = 0.25
+offset_left = -18.424
+offset_top = -1.6
+offset_right = 37.576
+offset_bottom = 12.0
+theme_override_constants/separation = 24
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="GUI/Control/hbox" index="0"]
+layout_mode = 2
+text = "="
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="countdown2" type="Control" parent="GUI" index="3"]
+layout_mode = 1
+anchor_left = 0.452
+anchor_top = 0.173
+anchor_right = 0.533
+anchor_bottom = 0.298
+offset_left = -0.0412064
+offset_top = -0.0325813
+offset_right = 0.518784
+offset_bottom = -0.0325775
+
+[node name="clock" type="TextureProgressBar" parent="GUI/countdown2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 5.0
+value = 5.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("2_8h42m")
+texture_over = ExtResource("3_1ui1v")
+texture_progress = ExtResource("4_0sfvl")
+metadata/_edit_lock_ = true
+
+[node name="counter" type="Label" parent="GUI/countdown2" index="1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_uef3m")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." index="3"]
+position = Vector2(104, 88)
+
+[node name="objects" parent="." index="4"]
+tile_map_data = PackedByteArray("AAAKAAQAAAAAAAAACAAKAAYAAAAAAAAACAALAAQAAAAAAAAACAALAAYAAAAAAAAACAAGAAYAAAAAAAAACgAGAAQAAAAAAAAACgAHAAUAAAAAAAAACgA=")
+
+[connection signal="body_entered" from="objects/lighter" to="objects/lighter" method="_on_body_entered"]
+[connection signal="body_entered" from="objects/@Area2D@50649" to="objects/@Area2D@50649" method="_on_body_entered"]
+[connection signal="body_entered" from="objects/@Area2D@50650" to="objects/@Area2D@50650" method="_on_body_entered"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbnkacmyl4n34"]
+
+[ext_resource type="Texture2D" uid="uid://bqm3fcigu1rd1" path="res://objects/activable/walls.png" id="1_t5t4q"]
+
+[node name="door" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.067
+anchor_bottom = 0.1
+offset_right = -0.0799999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_t5t4q")

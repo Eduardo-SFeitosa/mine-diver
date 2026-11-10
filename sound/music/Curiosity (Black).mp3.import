@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c81gxri0dfx84"
+path="res://.godot/imported/Curiosity (Black).mp3-137f845322aaf69a6ae77e8261da4ce0.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Curiosity (Black).mp3"
+dest_files=["res://.godot/imported/Curiosity (Black).mp3-137f845322aaf69a6ae77e8261da4ce0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

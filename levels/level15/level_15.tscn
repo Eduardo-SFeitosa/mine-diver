@@ -1,0 +1,204 @@
+[gd_scene load_steps=18 format=4 uid="uid://bxxdk5ppoo1yp"]
+
+[ext_resource type="PackedScene" uid="uid://b1r5gg6ag3ntw" path="res://levels/base_level/base_level.tscn" id="1_vbyei"]
+[ext_resource type="PackedScene" uid="uid://curo3lset8l5q" path="res://enemies/base_enemy/base_enemy.tscn" id="2_0wka0"]
+[ext_resource type="Texture2D" uid="uid://bk6tn02oqpe6x" path="res://enemies/sprites/flying_skull.png" id="2_kca88"]
+[ext_resource type="Texture2D" uid="uid://cine6ubiha8xm" path="res://player/player_explosion/sprites/explosion.png" id="3_lhjk1"]
+[ext_resource type="Texture2D" uid="uid://dth0ob0aheuyk" path="res://levels/level9/skull.png" id="4_oux2m"]
+[ext_resource type="PackedScene" uid="uid://bfpgaokx45p7t" path="res://objects/activable/base_door_cave.tscn" id="6_sg6rx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewa34"]
+atlas = ExtResource("2_kca88")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw01x"]
+atlas = ExtResource("2_kca88")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phist"]
+atlas = ExtResource("2_kca88")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a85c"]
+atlas = ExtResource("2_kca88")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_28es1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewa34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw01x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phist")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a85c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0ym7"]
+atlas = ExtResource("3_lhjk1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbche"]
+atlas = ExtResource("3_lhjk1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ap1b"]
+atlas = ExtResource("3_lhjk1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hfia"]
+atlas = ExtResource("3_lhjk1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4eut"]
+atlas = ExtResource("3_lhjk1")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cxqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0ym7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbche")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ap1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hfia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4eut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="base_level" instance=ExtResource("1_vbyei")]
+level_number = 15
+_remaining_explosions = 1
+hint_dialog = Array[String](["Those skulls seems like a movable coal cart", "They can also press buttons for you, try trapping them into one place"])
+bomb_activation = 2
+
+[node name="floor_cealing" parent="tilemaps" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAABAAAAA0AAAAAAAEABAAAAA0AAAAAAAIABAAAAA0AAAAAAAMABAAAAA0AAAAAAAQABAAAAA0AAAAAAAUABAAAAA0AAAAAAAYABAAAAA0AAAAAAAcABAAAAA0AAAAAAAgABAAAAA0AAAAAAAkABAAAAA0AAAABAAkABAAAAA0AAAACAAkABAAAAA0AAAADAAkABAAAAA0AAAAEAAkABAAAAA0AAAAFAAkABAAAAA0AAAAGAAkABAAAAA0AAAAHAAkABAAAAA0AAAAIAAkABAAAAA0AAAAJAAkABAAAAA0AAAAKAAkABAAAAA0AAAALAAkABAAAAA0AAAAMAAkABAAAAA0AAAANAAkABAAAAA0AAAAOAAkABAAAAA0AAAAOAAAABAAAAA0AAAAOAAEABAAAAA0AAAAOAAIABAAAAA0AAAAOAAMABAAAAA0AAAAOAAQABAAAAA0AAAAOAAUABAAAAA0AAAAOAAYABAAAAA0AAAAOAAcABAAAAA0AAAAOAAgABAAAAA0AAAABAAAABAAAAA0AAAACAAAABAAAAA0AAAADAAAABAAAAA0AAAAEAAAABAAAAA0AAAAFAAAABAAAAA0AAAAGAAAABAAAAA0AAAAHAAAABAAAAA0AAAAIAAAABAAAAA0AAAAJAAAABAAAAA0AAAAKAAAABAAAAA0AAAALAAAABAAAAA0AAAAMAAAABAAAAA0AAAANAAAABAAAAA0AAAABAAEABAAAAA0AAAABAAIABAAAAA0AAAABAAMABAAAAA0AAAABAAQABAAAAA0AAAABAAUABAAAAA0AAAABAAYABAAAAA0AAAABAAcABAAAAA0AAAABAAgABAAAAA0AAAACAAEABAAAAA0AAAACAAIABAAAAA0AAAACAAMABAAAAA0AAAACAAQABAAAAA0AAAACAAUABAAAAA0AAAACAAYABAAAAA0AAAACAAcABAAAAA0AAAACAAgABAAAAA0AAAADAAEABAAAAA0AAAADAAIABAAAAA0AAAADAAMABAADAA0AADADAAQABAAHAAwAAAADAAUABAAGAAwAAAADAAYABAAFAAwAAAADAAcABAAHAAwAAAADAAgABAADAA0AAFAEAAgABAAHAA0AAAAFAAgABAAGAA0AAAAGAAgABAAFAA0AAAAHAAgABAAHAA0AAAAIAAgABAAGAA0AAAAJAAgABAADAA0AAAAKAAgABAAAAA0AAAALAAgABAAAAA0AAAAMAAgABAAAAA0AAAANAAgABAAAAA0AAAAKAAEABAAAAA0AAAAKAAIABAADAA0AAGAKAAMABAAHAAsAAAAKAAQABAANAAsAAAAKAAUABAAHAAsAAAAKAAYABAAHAAsAAAAKAAcABAADAA0AAAALAAEABAAAAA0AAAALAAIABAAAAA0AAAALAAMABAAAAA0AAAALAAQABAAAAA0AAAALAAUABAAAAA0AAAALAAYABAAAAA0AAAALAAcABAAAAA0AAAAMAAEABAAAAA0AAAAMAAIABAAAAA0AAAAMAAMABAAAAA0AAAAMAAQABAAAAA0AAAAMAAUABAAAAA0AAAAMAAYABAAAAA0AAAAMAAcABAAAAA0AAAANAAEABAAAAA0AAAANAAIABAAAAA0AAAANAAMABAAAAA0AAAANAAQABAAAAA0AAAANAAUABAAAAA0AAAANAAYABAAAAA0AAAANAAcABAAAAA0AAAAEAAEABAAAAA0AAAAEAAIABAADAA0AADAFAAEABAAAAA0AAAAFAAIABAAGAAoAAAAGAAEABAAAAA0AAAAGAAIABAAHAAoAAAAHAAEABAAAAA0AAAAHAAIABAAHAAoAAAAIAAEABAAAAA0AAAAIAAIABAAFAAoAAAAJAAEABAAAAA0AAAAJAAIABAAHAAoAAAAFAAQAAwAMAAwAAAAFAAUAAwAMAAUAAAAFAAYAAwAJAAYAAAAGAAQAAwAMAAUAAAAGAAUAAwAJAAYAAAAGAAYAAwAMAAwAAAAHAAQAAwAJAAYAAAAHAAUAAwAMAAwAAAAHAAYAAwAJAAYAAAAIAAQAAwAJAAYAAAAIAAUAAwAJAAIAAAAIAAYAAwAMAAwAAAAEAAcAAwAIAA8AAAAEAAMABAACAAoAAGAJAAMAAwALAAAAAAAJAAcABAACAAoAAFAFAAcAAwAJAA8AAAAGAAcAAwAJAAMAAAAHAAcAAwAJAAcAAAAIAAcAAwAJAAcAAAAFAAMAAwAKAAQAAAAGAAMAAwAKAAQAAAAHAAMAAwAKAAwAAAAIAAMAAwAKAAAAAAAEAAQAAwAIAAUAAAAEAAUAAwAIAA0AAAAEAAYAAwAIAAUAAAAJAAQAAwALAAIAAAAJAAUAAwALAAYAAAAJAAYAAwALAA4AAAA=")
+
+[node name="remaining_explosions" parent="GUI" index="0"]
+visible = true
+anchor_left = 0.033
+anchor_top = 0.65
+anchor_right = 0.146
+anchor_bottom = 0.925
+offset_left = 0.0799999
+offset_top = 16.0
+offset_right = -0.0400047
+offset_bottom = -3.05176e-05
+
+[node name="background" parent="GUI/remaining_explosions" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="explosions_left" parent="GUI/remaining_explosions" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="counter" parent="GUI/remaining_explosions" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="countdown" parent="GUI" index="1"]
+visible = true
+anchor_left = 0.033
+anchor_top = 0.05
+anchor_right = 0.146
+anchor_bottom = 0.225
+offset_left = 0.0799999
+offset_top = 0.0
+offset_right = -0.0400047
+offset_bottom = -1.52588e-05
+
+[node name="Control" type="Control" parent="GUI" index="2"]
+layout_mode = 1
+anchor_left = 0.367
+anchor_top = 0.05
+anchor_right = 0.667
+anchor_bottom = 0.15
+offset_left = -0.0800018
+offset_right = -0.0800171
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="GUI/Control" index="0"]
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_28es1")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="AnimatedSprite2D" parent="GUI/Control" index="1"]
+position = Vector2(32, 8)
+sprite_frames = SubResource("SpriteFrames_0cxqr")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control" index="2"]
+layout_mode = 2
+offset_left = 56.0
+offset_right = 72.0
+offset_bottom = 16.0
+texture = ExtResource("4_oux2m")
+metadata/_edit_lock_ = true
+
+[node name="hbox" type="HBoxContainer" parent="GUI/Control" index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.1
+anchor_right = 0.667
+anchor_bottom = 0.25
+offset_left = -18.424
+offset_top = -1.6
+offset_right = 37.576
+offset_bottom = 12.0
+theme_override_constants/separation = 24
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="GUI/Control/hbox" index="0"]
+layout_mode = 2
+text = "+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="GUI/Control/hbox" index="1"]
+layout_mode = 2
+text = "="
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." index="2"]
+position = Vector2(104, 72)
+
+[node name="objects" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAEAAcAAAAAAAAABQAJAAUAAAAAAAAAAgAFAAUAAAAAAAAAAQAHAAQAAAAAAAAAAQAGAAYAAAAAAAAACgA=")
+
+[node name="base_enemy2" parent="enemy_path" index="0" instance=ExtResource("2_0wka0")]
+position = Vector2(152, 72)
+enemy_direction = 2
+
+[node name="base_enemy" parent="enemy_path" index="1" instance=ExtResource("2_0wka0")]
+position = Vector2(120, 120)
+enemy_direction = 1
+
+[node name="base_door" parent="." index="6" instance=ExtResource("6_sg6rx")]
+position = Vector2(168, 72)
+door_direction = 2
+
+[connection signal="body_entered" from="objects/press_button" to="objects/press_button" method="_on_body_entered"]
+[connection signal="body_exited" from="objects/press_button" to="objects/press_button" method="_on_body_exited"]
+[connection signal="body_entered" from="objects/lighter" to="objects/lighter" method="_on_body_entered"]

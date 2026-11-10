@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw3epoi4naytv"]
+
+[ext_resource type="Script" uid="uid://c2fv0h5sevfl5" path="res://menus/main_menu/warning/reset_warning.gd" id="1_fymjt"]
+[ext_resource type="Texture2D" uid="uid://b527ejdjx72o6" path="res://GUI/sprites/dialog_background.png" id="2_3tj4d"]
+[ext_resource type="Texture2D" uid="uid://cikvwxa6ri3l2" path="res://GUI/sprites/button_normal.png" id="3_3tj4d"]
+
+[node name="reset_warning" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fymjt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.3
+anchor_right = 0.667
+anchor_bottom = 0.75
+offset_left = 0.0800018
+offset_right = -0.0800171
+texture = ExtResource("2_3tj4d")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.111
+anchor_right = 0.8
+anchor_bottom = 0.375
+offset_top = 0.00799942
+offset_bottom = -3.0
+theme_override_font_sizes/font_size = 8
+text = "reset all save data?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="no" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.533
+anchor_top = 0.5
+anchor_right = 0.633
+anchor_bottom = 0.575
+offset_left = 0.0799866
+offset_right = 0.0800018
+mouse_filter = 0
+texture = ExtResource("3_3tj4d")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="no"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.111
+anchor_right = 0.8
+anchor_bottom = 0.778
+offset_top = 0.00799942
+offset_bottom = -7.836
+theme_override_font_sizes/font_size = 8
+text = "no"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="yes" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.5
+anchor_right = 0.467
+anchor_bottom = 0.575
+offset_left = -0.0800018
+offset_right = -0.0800018
+mouse_filter = 0
+texture = ExtResource("3_3tj4d")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="yes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.111
+anchor_right = 0.8
+anchor_bottom = 0.778
+offset_top = 0.00799942
+offset_bottom = -7.836
+theme_override_font_sizes/font_size = 8
+text = "yes"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.6
+anchor_right = 0.6
+anchor_bottom = 0.7
+theme_override_font_sizes/font_size = 5
+text = "This action can not be undone"
+horizontal_alignment = 1
+autowrap_mode = 2

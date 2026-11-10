@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=4 uid="uid://dcy7ujmgtdols"]
+
+[ext_resource type="PackedScene" uid="uid://b1r5gg6ag3ntw" path="res://levels/base_level/base_level.tscn" id="1_q5xp3"]
+[ext_resource type="Texture2D" uid="uid://buyk8soiw7bsx" path="res://objects/sprites/props.png" id="2_2upjs"]
+[ext_resource type="Texture2D" uid="uid://cine6ubiha8xm" path="res://player/player_explosion/sprites/explosion.png" id="3_7bqe2"]
+[ext_resource type="Texture2D" uid="uid://dth0ob0aheuyk" path="res://levels/level9/skull.png" id="4_7bqe2"]
+[ext_resource type="PackedScene" uid="uid://bongbq7by5l6p" path="res://objects/activable/base_door.tscn" id="5_7taes"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0ym7"]
+atlas = ExtResource("3_7bqe2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbche"]
+atlas = ExtResource("3_7bqe2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ap1b"]
+atlas = ExtResource("3_7bqe2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hfia"]
+atlas = ExtResource("3_7bqe2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4eut"]
+atlas = ExtResource("3_7bqe2")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7taes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0ym7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbche")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ap1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hfia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4eut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="base_level" instance=ExtResource("1_q5xp3")]
+level_number = 9
+_remaining_explosions = 1
+hint_dialog = Array[String](["Those coal carts are dangerous", "Try to activate them without getting closer"])
+
+[node name="floor_cealing" parent="tilemaps" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAgAAAAAAAEAAgAAAAgAAAAAAAIAAgAAAAgAAAAAAAMAAgAAAAgAAAAAAAQAAgAAAAgAAAAAAAUAAgAAAAgAAAAAAAYAAgAAAAgAAAAAAAcAAgAAAAgAAAAAAAgAAgAAAAgAAAAAAAkAAgAAAAgAAAABAAkAAgAAAAgAAAACAAkAAgAAAAgAAAADAAkAAgAAAAgAAAAEAAkAAgAAAAgAAAAFAAkAAgAAAAgAAAAGAAkAAgAAAAgAAAAHAAkAAgAAAAgAAAAIAAkAAgAAAAgAAAAJAAkAAgAAAAgAAAAKAAkAAgAAAAgAAAALAAkAAgAAAAgAAAAMAAkAAgAAAAgAAAANAAkAAgAAAAgAAAAOAAkAAgAAAAgAAAAOAAAAAgAAAAgAAAAOAAEAAgAAAAgAAAAOAAIAAgAAAAgAAAAOAAMAAgAAAAgAAAAOAAQAAgAAAAgAAAAOAAUAAgAAAAgAAAAOAAYAAgAAAAgAAAAOAAcAAgAAAAgAAAAOAAgAAgAAAAgAAAABAAAAAgAAAAgAAAACAAAAAgAAAAgAAAADAAAAAgAAAAgAAAAEAAAAAgAAAAgAAAAFAAAAAgAAAAgAAAAGAAAAAgAAAAgAAAAHAAAAAgAAAAgAAAAIAAAAAgAAAAgAAAAJAAAAAgAAAAgAAAAKAAAAAgAAAAgAAAALAAAAAgAAAAgAAAAMAAAAAgAAAAgAAAANAAAAAgAAAAgAAAAGAAIAAgAKAAUAAAAHAAIAAgALAAUAAAAIAAIAAgAMAAUAAAAJAAMAAgAIAAYAAAAJAAQAAgAIAAYAAAAJAAUAAgAIAAYAAAAJAAYAAgAHAAYAAAAJAAcAAgAHAAYAAAAFAAMAAgAHAAcAAAAFAAQAAgAIAAcAAAAFAAUAAgAIAAcAAAAFAAYAAgAHAAcAAAAFAAcAAgAHAAcAAAAJAAgAAgADAAgAAAAFAAgAAgADAAgAAFAFAAIAAgADAAgAADAJAAIAAgADAAgAAGAIAAgAAgAIAAgAAAAHAAgAAgAHAAgAAAAGAAgAAgAHAAgAAAABAAEAAgAAAAgAAAABAAIAAgAAAAgAAAABAAMAAgAAAAgAAAABAAQAAgAAAAgAAAABAAUAAgAAAAgAAAABAAYAAgAAAAgAAAABAAcAAgAAAAgAAAABAAgAAgAAAAgAAAACAAEAAgAAAAgAAAACAAIAAgAAAAgAAAACAAMAAgAAAAgAAAACAAQAAgAAAAgAAAACAAUAAgAAAAgAAAACAAYAAgAAAAgAAAACAAcAAgAAAAgAAAACAAgAAgAAAAgAAAADAAEAAgAAAAgAAAADAAIAAgAAAAgAAAADAAMAAgAAAAgAAAADAAQAAgAAAAgAAAADAAUAAgAAAAgAAAADAAYAAgAAAAgAAAADAAcAAgAAAAgAAAADAAgAAgAAAAgAAAAEAAEAAgAAAAgAAAAEAAIAAgAAAAgAAAAEAAMAAgAAAAgAAAAEAAQAAgAAAAgAAAAEAAUAAgAAAAgAAAAEAAYAAgAAAAgAAAAEAAcAAgAAAAgAAAAEAAgAAgAAAAgAAAAFAAEAAgAAAAgAAAAGAAEAAgAAAAgAAAAHAAEAAgAAAAgAAAAIAAEAAgAAAAgAAAAJAAEAAgAAAAgAAAAKAAEAAgAAAAgAAAALAAEAAgAAAAgAAAAMAAEAAgAAAAgAAAANAAEAAgAAAAgAAAAKAAIAAgAAAAgAAAAKAAMAAgAAAAgAAAAKAAQAAgAAAAgAAAAKAAUAAgAAAAgAAAAKAAYAAgAAAAgAAAAKAAcAAgAAAAgAAAAKAAgAAgAAAAgAAAALAAIAAgAAAAgAAAALAAMAAgAAAAgAAAALAAQAAgAAAAgAAAALAAUAAgAAAAgAAAALAAYAAgAAAAgAAAALAAcAAgAAAAgAAAALAAgAAgAAAAgAAAAMAAIAAgAAAAgAAAAMAAMAAgAAAAgAAAAMAAQAAgAAAAgAAAAMAAUAAgAAAAgAAAAMAAYAAgAAAAgAAAAMAAcAAgAAAAgAAAAMAAgAAgAAAAgAAAANAAIAAgAAAAgAAAANAAMAAgAAAAgAAAANAAQAAgAAAAgAAAANAAUAAgAAAAgAAAANAAYAAgAAAAgAAAANAAcAAgAAAAgAAAANAAgAAgAAAAgAAAAGAAQAAAAIAAUAAAAGAAUAAAAIAAUAAAAGAAYAAAAIAA0AAAAIAAQAAAALAAYAAAAIAAUAAAALAA4AAAAIAAYAAAALAAIAAAAIAAcAAAALAA8AAAAGAAcAAAAIAAcAAAAGAAMAAAAIAAAAAAAIAAMAAAALAAQAAAAHAAcAAAAJAA8AAAAHAAMAAAAKAAQAAAAHAAQAAAAMAAUAAAAHAAUAAAAJAAYAAAAHAAYAAAAMAAUAAAA=")
+
+[node name="Control" type="Control" parent="GUI" index="2"]
+layout_mode = 1
+anchor_left = 0.367
+anchor_top = 0.05
+anchor_right = 0.667
+anchor_bottom = 0.15
+offset_left = -0.0800018
+offset_right = -0.0800171
+
+[node name="Sprite2D" type="Sprite2D" parent="GUI/Control" index="0"]
+position = Vector2(0, 8)
+texture = ExtResource("2_2upjs")
+region_enabled = true
+region_rect = Rect2(16, 80, 16, 16)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="AnimatedSprite2D" parent="GUI/Control" index="1"]
+position = Vector2(32, 8)
+sprite_frames = SubResource("SpriteFrames_7taes")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control" index="2"]
+layout_mode = 2
+offset_left = 56.0
+offset_right = 72.0
+offset_bottom = 16.0
+texture = ExtResource("4_7bqe2")
+metadata/_edit_lock_ = true
+
+[node name="hbox" type="HBoxContainer" parent="GUI/Control" index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.1
+anchor_right = 0.667
+anchor_bottom = 0.25
+offset_left = -18.424
+offset_top = -1.6
+offset_right = 37.576
+offset_bottom = 12.0
+theme_override_constants/separation = 24
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="GUI/Control/hbox" index="0"]
+layout_mode = 2
+text = "+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="GUI/Control/hbox" index="1"]
+layout_mode = 2
+text = "="
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="objects" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAGAAYAAAAAAAAAAQAIAAYAAAAAAAAAAQAHAAMAAAAAAAAAAwAIAAMAAAAAAAAACAAGAAMAAAAAAAAACAA=")
+
+[node name="base_door" parent="." index="6" instance=ExtResource("5_7taes")]
+position = Vector2(120, 40)
+activated = 1
