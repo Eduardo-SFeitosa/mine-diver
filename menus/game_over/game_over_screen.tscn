@@ -1,0 +1,222 @@
+[gd_scene load_steps=12 format=3 uid="uid://bcif1uswehjdq"]
+
+[ext_resource type="Script" uid="uid://djene32ghje2l" path="res://menus/game_over/game_over_screen.gd" id="1_u5cty"]
+[ext_resource type="Texture2D" uid="uid://cikvwxa6ri3l2" path="res://GUI/sprites/button_normal.png" id="2_00gaq"]
+[ext_resource type="Texture2D" uid="uid://lh5b5rv73crk" path="res://GUI/sprites/background_panel.png" id="2_x0k8c"]
+[ext_resource type="Texture2D" uid="uid://cine6ubiha8xm" path="res://player/player_explosion/sprites/explosion.png" id="4_gj0ua"]
+[ext_resource type="AudioStream" uid="uid://cokwapfluhh42" path="res://sound/sfx/explosion.wav" id="5_q03kr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q03kr"]
+atlas = ExtResource("4_gj0ua")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjbce"]
+atlas = ExtResource("4_gj0ua")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07ql1"]
+atlas = ExtResource("4_gj0ua")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjpwr"]
+atlas = ExtResource("4_gj0ua")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ljv6"]
+atlas = ExtResource("4_gj0ua")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd4lw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q03kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjbce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07ql1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjpwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ljv6")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="game_over_screen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_u5cty")
+
+[node name="background" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.233
+anchor_top = 0.2
+anchor_right = 0.767
+anchor_bottom = 0.85
+offset_left = 0.079998
+offset_right = -0.0800018
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_x0k8c")
+
+[node name="game_over_label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.267
+anchor_top = 0.3
+anchor_right = 0.733
+anchor_bottom = 0.444
+offset_left = -0.0799942
+offset_right = 0.0800018
+offset_bottom = 0.959999
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXPLODED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttons" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.5
+anchor_right = 0.667
+anchor_bottom = 0.75
+offset_left = 0.0800018
+offset_right = -0.0800171
+alignment = 1
+
+[node name="restart" type="NinePatchRect" parent="buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("2_00gaq")
+patch_margin_left = 3
+patch_margin_top = 1
+patch_margin_right = 3
+patch_margin_bottom = 1
+
+[node name="Label" type="Label" parent="buttons/restart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "RESTART"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="menu" type="NinePatchRect" parent="buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("2_00gaq")
+patch_margin_left = 3
+patch_margin_top = 1
+patch_margin_right = 3
+patch_margin_bottom = 1
+
+[node name="Label" type="Label" parent="buttons/menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "MENU"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="explosions" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(160, 120)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(128, 56)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(80, 80)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(88, 56)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(112, 120)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(72, 112)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(160, 72)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(80, 48)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(152, 48)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_xd4lw")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(80, 80)
+stream = ExtResource("5_q03kr")
+bus = &"sfx"
+
+[node name="button_pressed" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+bus = &"sfx"

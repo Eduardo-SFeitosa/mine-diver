@@ -1,0 +1,614 @@
+[gd_scene load_steps=15 format=4 uid="uid://knaaxrjv53fv"]
+
+[ext_resource type="Script" uid="uid://dvi8hgmdvtk0" path="res://menus/main_menu/main_menu.gd" id="1_xbn2l"]
+[ext_resource type="Texture2D" uid="uid://cikvwxa6ri3l2" path="res://GUI/sprites/button_normal.png" id="2_er5qh"]
+[ext_resource type="Texture2D" uid="uid://gxl8drm0a072" path="res://tile_set/sprites/surground.png" id="2_f7ts8"]
+[ext_resource type="Texture2D" uid="uid://6peikwj410ct" path="res://tile_set/sprites/minecart_and_rails.png" id="3_81su3"]
+[ext_resource type="Texture2D" uid="uid://p1pq20f6m4bq" path="res://tile_set/sprites/grounds_dark.png" id="4_t7kvd"]
+[ext_resource type="Texture2D" uid="uid://lh5b5rv73crk" path="res://GUI/sprites/background_panel.png" id="7_81su3"]
+[ext_resource type="Texture2D" uid="uid://dtfl5m8ul5pxc" path="res://player/sprites/cart_animation.png" id="7_f7ts8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7ts8"]
+texture = ExtResource("2_f7ts8")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81su3"]
+texture = ExtResource("3_81su3")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7kvd"]
+texture = ExtResource("4_t7kvd")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sk04l"]
+sources/0 = SubResource("TileSetAtlasSource_f7ts8")
+sources/1 = SubResource("TileSetAtlasSource_81su3")
+sources/2 = SubResource("TileSetAtlasSource_t7kvd")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81su3"]
+atlas = ExtResource("7_f7ts8")
+region = Rect2(0, 0, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7kvd"]
+atlas = ExtResource("7_f7ts8")
+region = Rect2(16, 0, 16, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8woyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81su3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7kvd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbn2l")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.368627, 0.521569, 0.286275, 1)
+
+[node name="ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAJAAcAAAABAAIAAAAJAAcAAAABAAMAAAAJAAcAAAABAAQAAAAAAAgAAAABAAUAAAAJAAcAAAABAAYAAAAJAAcAAAABAAcAAAAJAAcAAAABAAgAAAAJAAgAAAACAAEAAAAJAAcAAAACAAIAAAAJAAcAAAACAAMAAAAJAAcAAAACAAQAAAAJAAcAAAACAAUAAAAJAAcAAAACAAYAAAAJAAcAAAACAAcAAAAJAAcAAAACAAgAAAAJAAgAAAADAAEAAAAJAAcAAAADAAIAAAAJAAcAAAADAAMAAAAJAAcAAAADAAQAAAAJAAcAAAADAAUAAAAJAAcAAAADAAYAAAAJAAcAAAADAAcAAAAJAAcAAAADAAgAAAAJAAcAAAAEAAEAAAAJAAcAAAAEAAIAAAAJAAcAAAAEAAMAAAAJAAcAAAAEAAQAAAAJAAcAAAAEAAUAAAAJAAcAAAAEAAYAAAAJAAcAAAAEAAcAAAAJAAcAAAAEAAgAAAAJAAcAAAAFAAEAAAAJAAcAAAAFAAIAAAAJAAcAAAAFAAMAAAAJAAcAAAAFAAQAAAAJAAcAAAAFAAUAAAAJAAcAAAAFAAYAAAAJAAcAAAAFAAcAAAAJAAcAAAAFAAgAAAAJAAcAAAAGAAEAAAAJAAcAAAAGAAIAAAAJAAcAAAAGAAMAAAAJAAcAAAAGAAQAAAAJAAcAAAAGAAUAAAAJAAcAAAAGAAYAAAAJAAcAAAAGAAcAAAACAAgAAAAGAAgAAAAJAAcAAAAHAAEAAAAJAAcAAAAHAAIAAAAJAAcAAAAHAAMAAAAJAAcAAAAHAAQAAAAJAAcAAAAHAAUAAAAJAAcAAAAHAAYAAAAJAAcAAAAHAAcAAAACAAgAAAAHAAgAAAAJAAcAAAAIAAEAAAAJAAcAAAAIAAIAAAAJAAcAAAAIAAMAAAAJAAcAAAAIAAQAAAAJAAcAAAAIAAUAAAAJAAcAAAAIAAYAAAAJAAcAAAAIAAcAAAAJAAcAAAAIAAgAAAAJAAcAAAAJAAEAAAAJAAcAAAAJAAIAAAAJAAcAAAAJAAMAAAAJAAcAAAAJAAQAAAAJAAcAAAAJAAUAAAAJAAcAAAAJAAYAAAAJAAcAAAAJAAcAAAAJAAcAAAAJAAgAAAAJAAcAAAAKAAEAAAAJAAcAAAAKAAIAAAAJAAcAAAAKAAMAAAAJAAcAAAAKAAQAAAAJAAcAAAAKAAUAAAAJAAcAAAAKAAYAAAAJAAcAAAAKAAcAAAAJAAcAAAAKAAgAAAAJAAcAAAALAAEAAAAJAAcAAAALAAIAAAAJAAcAAAALAAMAAAAJAAcAAAALAAQAAAAJAAcAAAALAAUAAAAJAAcAAAALAAYAAAAJAAcAAAALAAcAAAAJAAcAAAALAAgAAAAJAAcAAAAMAAEAAAAJAAcAAAAMAAIAAAAJAAcAAAAMAAMAAAAJAAcAAAAMAAQAAAAJAAcAAAAMAAUAAAAJAAcAAAAMAAYAAAAJAAcAAAAMAAcAAAAJAAcAAAAMAAgAAAAJAAcAAAANAAEAAAAJAAcAAAANAAIAAAAJAAcAAAANAAMAAAAJAAcAAAANAAQAAAAJAAcAAAANAAUAAAAJAAcAAAANAAYAAAAJAAcAAAANAAcAAAAJAAcAAAANAAgAAAAJAAgAAAAOAAAAAAALAAUAAAAOAAEAAAALAAcAAAAOAAIAAAALAAcAAAAOAAMAAAALAAcAAAAOAAQAAAALAAcAAAAOAAUAAAALAAcAAAAOAAYAAAALAAcAAAAOAAcAAAALAAcAAAAOAAgAAAALAAgAAAAAAAAAAAAIAAUAAAAAAAEAAAAIAAYAAAAAAAIAAAAIAAYAAAAAAAMAAAAIAAYAAAAAAAQAAAAIAAYAAAAAAAUAAAAIAAYAAAAAAAYAAAAIAAYAAAAAAAcAAAAIAAgAAAAAAAgAAAAIAAgAAAABAAAAAAAKAAUAAAACAAAAAAAKAAUAAAADAAAAAAAKAAUAAAAEAAAAAAAKAAUAAAAFAAAAAAAKAAUAAAAGAAAAAAAKAAUAAAAHAAAAAAAKAAUAAAAIAAAAAAAKAAUAAAAJAAAAAAAKAAUAAAAKAAAAAAAKAAUAAAALAAAAAAAKAAUAAAAMAAAAAAAKAAUAAAANAAAAAAAKAAUAAAAAAAkAAgAJAAIAAAABAAkAAgAMAAwAAAACAAkAAgAMAAwAAAADAAkAAgAJAAIAAAAEAAkAAgAJAAIAAAAFAAkAAgAJAAIAAAAGAAkAAgAJAAIAAAAHAAkAAgAMAAwAAAAIAAkAAgAJAAIAAAAJAAkAAgAMAAwAAAAKAAkAAgAJAAIAAAALAAkAAgAJAAIAAAAMAAkAAgAMAAwAAAANAAkAAgAMAAwAAAAOAAkAAgAMAAwAAAA=")
+tile_set = SubResource("TileSet_sk04l")
+
+[node name="rails" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAJAAcAAAABAAIAAAAJAAcAAAABAAMAAAAJAAcAAAABAAQAAAAJAAcAAAABAAUAAAAJAAcAAAABAAYAAAAJAAcAAAABAAcAAAAJAAcAAAABAAgAAAAJAAgAAAACAAEAAAAJAAcAAAACAAIAAAAJAAcAAAACAAMAAAAJAAcAAAACAAQAAAAJAAcAAAACAAYAAAAJAAcAAAACAAcAAAAJAAcAAAACAAgAAAAJAAgAAAADAAEAAAAJAAcAAAADAAIAAAAJAAcAAAADAAMAAAAJAAcAAAADAAUAAAAJAAcAAAADAAYAAAAJAAcAAAADAAcAAAAJAAcAAAADAAgAAAAJAAgAAAAEAAEAAAAJAAcAAAAEAAIAAAAJAAcAAAAEAAMAAAAJAAcAAAAEAAQAAAAJAAcAAAAEAAgAAAAJAAgAAAAFAAEAAAAJAAcAAAAFAAIAAAAJAAcAAAAFAAMAAAAJAAcAAAAFAAQAAAAJAAcAAAAFAAUAAAAJAAcAAAAFAAYAAAAJAAcAAAAFAAcAAAAJAAcAAAAFAAgAAAAJAAgAAAAGAAEAAAAJAAcAAAAGAAIAAAAJAAcAAAAGAAMAAAAJAAcAAAAGAAQAAAAJAAcAAAAGAAUAAAAJAAcAAAAGAAYAAAAJAAcAAAAGAAcAAAAJAAcAAAAGAAgAAAACAAgAAAAHAAEAAAAJAAcAAAAHAAIAAAAJAAcAAAAHAAMAAAAJAAcAAAAHAAQAAAAJAAcAAAAHAAUAAAAJAAcAAAAHAAYAAAAJAAcAAAAHAAcAAAAJAAcAAAAHAAgAAAACAAgAAAAIAAEAAAAJAAcAAAAIAAIAAAAJAAcAAAAIAAMAAAAJAAcAAAAIAAQAAAAJAAcAAAAIAAUAAAAJAAcAAAAIAAYAAAAJAAcAAAAIAAcAAAAJAAcAAAAIAAgAAAACAAgAAAAJAAEAAAAJAAcAAAAJAAIAAAAJAAcAAAAJAAMAAAAJAAcAAAAJAAQAAAAJAAcAAAAJAAUAAAAJAAcAAAAJAAYAAAAJAAcAAAAJAAcAAAAJAAcAAAAJAAgAAAACAAgAAAAKAAEAAAAJAAcAAAAKAAIAAAAJAAcAAAAKAAMAAAAJAAcAAAAKAAQAAAAJAAcAAAAKAAUAAAAJAAcAAAAKAAYAAAAJAAcAAAAKAAcAAAAJAAcAAAAKAAgAAAAJAAgAAAALAAEAAAAJAAcAAAALAAIAAAAJAAcAAAALAAMAAAAJAAcAAAALAAQAAAAJAAcAAAALAAUAAAAJAAcAAAALAAYAAAAJAAcAAAALAAcAAAAJAAcAAAALAAgAAAAJAAgAAAAMAAEAAAAJAAcAAAAMAAIAAAAJAAcAAAAMAAMAAAAJAAcAAAAMAAQAAAAJAAcAAAAMAAUAAAAJAAcAAAAMAAYAAAAJAAcAAAAMAAcAAAAJAAcAAAAMAAgAAAAJAAgAAAANAAEAAAAJAAcAAAANAAIAAAAJAAcAAAANAAMAAAAJAAcAAAANAAQAAAAJAAcAAAANAAUAAAAJAAcAAAANAAYAAAAJAAcAAAANAAcAAAAJAAcAAAANAAgAAAAJAAgAAAABAAkAAQACAAAAAAACAAkAAQACAAAAAAADAAkAAQACAAAAAAAEAAkAAQACAAAAAAAFAAkAAQACAAAAAAAGAAkAAQACAAAAAAAHAAkAAQACAAAAAAAIAAkAAQACAAAAAAAJAAkAAQACAAAAAAAKAAkAAQACAAAAAAALAAkAAQACAAAAAAAMAAkAAQACAAAAAAANAAkAAQACAAAAAAAOAAkAAQACAAAAAAAOAAAAAAALAAUAAAAOAAEAAAALAAcAAAAOAAIAAAALAAcAAAAOAAMAAAALAAcAAAAOAAQAAAALAAcAAAAOAAUAAAALAAcAAAAOAAYAAAALAAcAAAAOAAcAAAALAAcAAAAOAAgAAAALAAgAAAAAAAkAAQACAAAAAAAAAAAAAAAIAAUAAAAAAAEAAAAIAAYAAAAAAAIAAAAIAAYAAAAAAAMAAAAIAAYAAAAAAAQAAAAIAAYAAAAAAAUAAAAIAAYAAAAAAAYAAAAIAAYAAAAAAAcAAAAIAAYAAAAAAAgAAAAIAAgAAAABAAAAAAAKAAUAAAACAAAAAAAKAAUAAAADAAAAAAAKAAUAAAAEAAAAAAAKAAUAAAAFAAAAAAAKAAUAAAAGAAAAAAAKAAUAAAAHAAAAAAAKAAUAAAAIAAAAAAAKAAUAAAAJAAAAAAAKAAUAAAAKAAAAAAAKAAUAAAALAAAAAAAKAAUAAAAMAAAAAAAKAAUAAAANAAAAAAAKAAUAAAAEAAUAAAAJAAcAAAAEAAYAAAAJAAcAAAAEAAcAAAAJAAcAAAADAAQAAAAJAAcAAAA=")
+tile_set = SubResource("TileSet_sk04l")
+
+[node name="credits" type="NinePatchRect" parent="."]
+layout_mode = 2
+anchor_left = 0.8
+anchor_top = 0.8
+anchor_right = 0.967
+anchor_bottom = 0.894
+offset_right = -0.0800323
+offset_bottom = -0.0400085
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("2_er5qh")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Label" type="Label" parent="credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 7
+text = "credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.4
+anchor_right = 0.7
+anchor_bottom = 0.837
+offset_left = -0.0800018
+offset_right = -1.52588e-05
+offset_bottom = 0.0800018
+
+[node name="play" type="NinePatchRect" parent="buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("2_er5qh")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="buttons/play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="options" type="NinePatchRect" parent="buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("2_er5qh")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="buttons/options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="exit" type="NinePatchRect" parent="buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("2_er5qh")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="buttons/exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="player" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, 148.783)
+sprite_frames = SubResource("SpriteFrames_8woyc")
+autoplay = "default"
+frame_progress = 0.0914408
+
+[node name="animation_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.1
+anchor_right = 0.65
+anchor_bottom = 0.35
+offset_right = -1.52588e-05
+texture = ExtResource("7_81su3")
+patch_margin_left = 5
+patch_margin_top = 3
+patch_margin_right = 5
+patch_margin_bottom = 3
+
+[node name="title" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = " mine 
+diver"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="reset" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.63
+anchor_right = 0.967
+anchor_bottom = 0.774
+offset_top = -0.0059433
+offset_right = -0.0800171
+offset_bottom = -0.0459442
+mouse_filter = 0
+texture = ExtResource("2_er5qh")
+patch_margin_left = 5
+patch_margin_top = 3
+patch_margin_right = 5
+patch_margin_bottom = 3
+
+[node name="title" type="Label" parent="reset"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "reset
+save"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="button_pressed" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
+
+[node name="title2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.767
+anchor_top = 0.05
+anchor_right = 0.979
+anchor_bottom = 0.169
+offset_left = -0.0800018
+offset_right = 0.0399933
+offset_bottom = -0.0400028
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "alchemy jam
+#7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="animation_timer" to="." method="_on_animation_timer_timeout"]

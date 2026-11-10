@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://csr4fyf0egumt"]
+
+[ext_resource type="Script" uid="uid://d0tksju77saau" path="res://sound/music_node.gd" id="2_ewbd1"]
+
+[node name="music_node" type="AudioStreamPlayer"]
+bus = &"music"
+script = ExtResource("2_ewbd1")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+max_polyphony = 8
+bus = &"sfx"

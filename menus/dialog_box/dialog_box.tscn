@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcscjl4lh6hge"]
+
+[ext_resource type="Script" uid="uid://4aycmfl5nwfa" path="res://menus/dialog_box/dialog_box.gd" id="1_ituai"]
+[ext_resource type="Texture2D" uid="uid://b527ejdjx72o6" path="res://GUI/sprites/dialog_background.png" id="1_mjf7l"]
+[ext_resource type="Texture2D" uid="uid://djjen3ov50rrw" path="res://cutscenes/sprites/continue_arrow.png" id="4_u8m1b"]
+[ext_resource type="AudioStream" uid="uid://dkeieouqtgt66" path="res://sound/sfx/dialog.wav" id="5_0t3vg"]
+[ext_resource type="AudioStream" uid="uid://cokwapfluhh42" path="res://sound/sfx/explosion.wav" id="5_56l14"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dftna"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_56l14"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("finish_arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(212.182, 31.9343)]
+}
+
+[sub_resource type="Animation" id="Animation_0t3vg"]
+resource_name = "arrow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("finish_arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.533333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(209, 31.934), Vector2(209, 29.701), Vector2(209, 31.934)]
+}
+
+[sub_resource type="Animation" id="Animation_u8m1b"]
+resource_name = "arrow_reverse"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("finish_arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.51, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(170, 32), Vector2(170, 29.399), Vector2(170, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yg5v"]
+_data = {
+&"RESET": SubResource("Animation_56l14"),
+&"arrow": SubResource("Animation_0t3vg"),
+&"arrow_reverse": SubResource("Animation_u8m1b")
+}
+
+[node name="dialog_box" type="NinePatchRect"]
+process_mode = 3
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.662
+anchor_right = 0.975
+anchor_bottom = 0.977
+offset_top = 0.0799866
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_mjf7l")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 13
+patch_margin_bottom = 13
+script = ExtResource("1_ituai")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.12
+anchor_right = 0.974
+anchor_bottom = 0.88
+offset_left = 0.072
+offset_right = -0.0720062
+offset_bottom = -1.52588e-05
+color = Color(0, 0, 0, 1)
+
+[node name="letter_display" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="pause" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="content_container" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044
+anchor_top = 0.16
+anchor_right = 0.952
+anchor_bottom = 0.86
+offset_left = -0.0320005
+offset_right = -0.0559998
+offset_bottom = -1.52588e-05
+
+[node name="profile" type="VBoxContainer" parent="content_container"]
+custom_minimum_size = Vector2(29, 0)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="image_container" type="Panel" parent="content_container/profile"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dftna")
+metadata/_edit_lock_ = true
+
+[node name="profile_image" type="TextureRect" parent="content_container/profile/image_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label" type="Label" parent="content_container/profile"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="box_text" type="RichTextLabel" parent="content_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 10
+fit_content = true
+
+[node name="finish_arrow" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.768
+anchor_top = 0.64
+anchor_right = 0.795
+anchor_bottom = 0.84
+offset_left = 37.078
+offset_top = -0.0657082
+offset_right = 36.922
+offset_bottom = -0.065712
+texture = ExtResource("4_u8m1b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3yg5v")
+}
+autoplay = "arrow"
+
+[node name="dialog_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0t3vg")
+bus = &"sfx"
+
+[node name="explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_56l14")
+bus = &"sfx"
+
+[connection signal="timeout" from="letter_display" to="." method="_on_letter_display_timeout"]
+[connection signal="timeout" from="pause" to="." method="_on_pause_timeout"]

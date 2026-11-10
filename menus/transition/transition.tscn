@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d005jibuc0epf"]
+
+[ext_resource type="Script" uid="uid://ccl0415c2i27e" path="res://menus/transition/transition.gd" id="1_udpu7"]
+[ext_resource type="Shader" uid="uid://61awtno3jp48" path="res://menus/transition/transition.gdshader" id="2_yr1e5"]
+[ext_resource type="AudioStream" uid="uid://djmfjiwgoxmiy" path="res://menus/transition/transition_up.wav" id="3_lm8vv"]
+[ext_resource type="AudioStream" uid="uid://8jvdonvvfha4" path="res://menus/transition/transition_down.wav" id="4_w53mp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_meabu"]
+shader = ExtResource("2_yr1e5")
+shader_parameter/pixel_size = 1.0
+
+[node name="transition" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_udpu7")
+
+[node name="dissolve" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_meabu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="audio_up" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lm8vv")
+volume_db = -10.0
+bus = &"sfx"
+
+[node name="audio_down" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_w53mp")
+volume_db = -10.0
+bus = &"sfx"

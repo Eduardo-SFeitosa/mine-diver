@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjgwvpspv2626"]
+
+[ext_resource type="Texture2D" uid="uid://buyk8soiw7bsx" path="res://objects/sprites/props.png" id="1_4do8h"]
+[ext_resource type="Script" uid="uid://cwqp7aar0x8f8" path="res://objects/draglables/base_dragable.gd" id="1_fpa5k"]
+[ext_resource type="AudioStream" uid="uid://ckyktnxn48qh1" path="res://sound/sfx/dragable.wav" id="3_gy101"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpa5k"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy101"]
+size = Vector2(8, 8)
+
+[node name="BaseDragable" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 15
+motion_mode = 1
+script = ExtResource("1_fpa5k")
+
+[node name="colision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fpa5k")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_4do8h")
+region_enabled = true
+region_rect = Rect2(0, 80, 16, 16)
+
+[node name="push_direction" type="RayCast2D" parent="."]
+target_position = Vector2(0, 8)
+collision_mask = 11
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 15
+lifetime = 0.28
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(8, 8)
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.4
+initial_velocity_max = 99.56
+color = Color(0.147595, 0.566808, 0.291064, 1)
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gy101")
+volume_db = -5.143
+bus = &"sfx"
+
+[node name="player_cliped_check" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_cliped_check"]
+shape = SubResource("RectangleShape2D_gy101")
+
+[connection signal="body_entered" from="player_cliped_check" to="." method="_on_player_cliped_check_body_entered"]
