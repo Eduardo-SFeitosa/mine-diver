@@ -1,7 +1,7 @@
 # Mine Diver
 
 Mine Diver é um jogo completo que utiliza python e exportado para HTML5.
-6º na competição alchemy jam 
+1º colocado na competição alchemy jam 
 
 ## Disponível em Itch.io
 [Jogar Mine Diver](https://www.example.com)
